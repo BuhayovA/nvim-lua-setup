@@ -1,21 +1,22 @@
+-- TODO fwe
+--todo-comments Test
 return {
-  ["NvChad/nvim-colorizer.lua"] = {disable = true},
-  {"prisma/vim-prisma"},
-  {"mattn/emmet-vim"},
+  "HerringtonDarkholme/yats.vim",
+  ["NvChad/nvim-colorizer.lua"] = { disable = true },
+  { "prisma/vim-prisma", event = "User Astrofile" },
+  { "mattn/emmet-vim", event = "VeryLazy" },
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-    }
+    opts = {},
+    event = "User Astrofile",
+    cmd = { "TodoQuickFix" },
   },
   {
-    'numToStr/Comment.nvim',
+    "numToStr/Comment.nvim",
     opts = {
-      pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+      pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
     },
     lazy = false,
   },
